@@ -6,8 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Awesome Books</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 </head>
 <body>
+    <section class="book-list">
+        <div class="books-nav">
+            <i class="uil uil-book-open"></i>
+            <h1>My Awesome Books</h1>
+            <div class="my-books"></div>
+        </div>
+    </section>
+    <section class="new-books">
+        <form id="new-book">
+            <div class="add-book">
+                <input type="text" name="Title" id="title" placeholder="Title" required><br>
+                <input type="text" name="Author" id="author" placeholder="Author" required><br>
+                <button id="add-new">Add</button>
+            </div>
+
+        </form>
+    </section>
+    <section class="contacts"></section>
     <script src="script.js"></script>
 </body>
 </html>
