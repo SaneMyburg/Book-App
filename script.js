@@ -30,11 +30,39 @@ class UI {
         <p>${book.title}</p>
         <p>By</p>
         <p>${book.author}</p>
-        <button id="remove-book">Remove</button>
+        <button class="remove-book">Remove</button>
         `;
     list.appendChild(allBooks);
   }
+
+  static deleteBook(element) {
+    if (element.classList.contains('remove-book')) {
+        element.parentElement.remove();
+    }
+  }
+
+  static clearFields() {
+    document.querySelector('#title').value = '';
+    document.querySelector('#author').value = '';
+   }
 }
 
 // Display Books
 document.addEventListener('DOMContentLoaded', UI.displayBooks);
+
+// Adding Book 
+document.querySelector('#new-book').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const title = document.querySelector('#title').value;
+    const author = document.querySelector('#author').value;
+
+    const book = new Book(title, author);
+    UI.addBookToList(book);
+    UI.clearFields();
+});
+
+// Remove Book 
+document.querySelector('.my-books').addEventListener('click', (e) => {
+    UI.deleteBook(e.target);
+    console.log(e.target);
+});
