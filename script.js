@@ -43,11 +43,12 @@ class UI {
   static addBookToList(book) {
     const list = document.querySelector('.my-books');
     const allBooks = document.createElement('div');
+    allBooks.classList.add('mybooks-item');
 
     allBooks.innerHTML = `
-        <p>${book.title}</p>
-        <p>By</p>
-        <p>${book.author}</p>
+        <p class="mybooks-p">${book.title}</p>
+        <p class="mybooks-p">By</p>
+        <p class="mybooks-p">${book.author}</p>
         <button class="remove-book">Remove</button>
         `;
     list.appendChild(allBooks);

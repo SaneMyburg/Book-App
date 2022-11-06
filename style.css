@@ -1,0 +1,111 @@
+* {
+   box-sizing: border-box; 
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   color: rgb(83, 81, 81);
+}
+
+.books-nav {
+    display: flex;
+    margin: 5px 10px;
+    justify-content: space-between;
+    border: 2px rgb(83, 81, 81) solid;
+    padding: 10px 20px;
+}
+
+.logo {
+    display: flex;
+    gap: 5px;
+}
+
+.books-nav i {
+    margin: 2px 0px;
+    font-size: 25px;
+    color: blue;
+}
+
+.books-nav h1 {
+    margin: 0px 0px;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.nav-list ul{
+    display: flex;
+    list-style-type: none;
+    margin: 3% 0%;
+    gap: 20px;
+}
+
+.nav-list ul li {
+    border-right: 2px rgb(83, 81, 81) solid;
+    padding-right: 10px;
+}
+
+.nav-list ul li a{
+    text-decoration: none;
+}
+
+.date {
+    display: flex;
+    justify-content: end;
+}
+
+.date p {
+    font-style: italic;
+    font-weight: 600;
+    font-size: 13px;
+    margin: 0% 2%;
+}
+
+.books-library h2 {
+    text-align: center;
+}
+
+.my-books {
+    display: flex;
+    flex-direction: column;
+    border: 2px rgb(83, 81, 81) solid;
+    margin: 10px 10px;
+    padding: 5px 0px 10px;
+}
+
+.mybooks-p {
+    font-weight: 700;
+    float: left;
+    margin: 5px 5px;
+    padding-right: 10px;
+}
+
+.remove-book {
+   float: right;
+   margin: 5px;
+   font-weight: 700;   
+}
+
+.my-books > div:nth-child(odd) {
+    background: #cfcfcf;
+}
+
+.newbooks-h2 {
+    text-align: center;
+}
+
+.add-book {
+    display: flex;
+    flex-direction: column;
+}
+
+#title,
+#author {
+    width: 70%;
+    align-self: center;
+    border: 2px rgb(83, 81, 81) solid;
+    padding: 5px;
+}
+
+#add-new {
+    border: 2px rgb(83, 81, 81) solid;
+    padding: 5px;
+    width: 10%;
+    margin-left: 75%;
+}
