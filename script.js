@@ -7,18 +7,7 @@ class Book {
 
 class UI {
   static displayBooks() {
-    const StoredBooks = [
-      {
-        title: 'My Perfect Life',
-        author: 'Sane Myburg',
-      },
-      {
-        title: 'Shazam',
-        author: 'Zoe Myburg',
-      },
-    ];
-
-    const books = StoredBooks;
+    const books = Store.getBooks();
     books.forEach((book) => UI.addBookToList(book));
   }
 
@@ -47,6 +36,36 @@ class UI {
    }
 }
 
+// Storing Handling
+class Store {
+  static getBooks() {
+    let books;
+    if (localStorage.getItem('books') === null) {
+      books = [];
+    } else {
+      books = JSON.parse(localStorage.getItem('books'));
+    }
+    return books;
+  }
+
+  static addBook(book) {
+    const books = Store.getBooks();
+    books.push(book);
+    localStorage.setItem('books', JSON.stringify(books));
+  }
+
+  static removeBook(author) {
+    const books = Store.getBooks();
+    books.forEach((book, index) => {
+      if(book.author === author) {
+        books.splice(index, 1);
+      }
+
+    })
+    localStorage.setItem('books', JSON.stringify(books));
+  }
+ }
+
 // Display Books
 document.addEventListener('DOMContentLoaded', UI.displayBooks);
 
@@ -58,11 +77,14 @@ document.querySelector('#new-book').addEventListener('submit', (e) => {
 
     const book = new Book(title, author);
     UI.addBookToList(book);
+    // Adding Book to Storage
+    Store.addBook(book);
     UI.clearFields();
 });
 
 // Remove Book 
 document.querySelector('.my-books').addEventListener('click', (e) => {
     UI.deleteBook(e.target);
-    console.log(e.target);
+
+    Store.removeBook(e.target.previousElementSibling.textContent);
 });
