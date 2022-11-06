@@ -29,14 +29,15 @@
     font-weight: 700;
 }
 
-.nav-list ul{
+.nav-ul {
     display: flex;
     list-style-type: none;
     margin: 3% 0%;
     gap: 20px;
 }
 
-.nav-list ul li {
+#list,
+#add-link {
     border-right: 2px rgb(83, 81, 81) solid;
     padding-right: 10px;
 }
@@ -59,6 +60,11 @@
 
 .books-library h2 {
     text-align: center;
+}
+
+.books-library {
+    padding-top: 5%;
+    height: 78vh;
 }
 
 .my-books {
@@ -88,11 +94,16 @@
 
 .newbooks-h2 {
     text-align: center;
+    padding-top: 6%;
+}
+.new-books {
+    display: none;
 }
 
 .add-book {
     display: flex;
     flex-direction: column;
+    height: 65vh;
 }
 
 #title,
@@ -110,9 +121,15 @@
     margin-left: 75%;
 }
 
-.contacts {
+.contact-hide {
     display: flex;
     flex-direction: column;
+    padding-top: 8%;
+    height: 80vh;
+}
+
+.contacts {
+    display: none;
 }
 
 .contacts h2 {
