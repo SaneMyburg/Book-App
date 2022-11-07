@@ -49,13 +49,10 @@
 .date {
   display: flex;
   justify-content: end;
-}
-
-.date p {
   font-style: italic;
   font-weight: 600;
   font-size: 13px;
-  margin: 0% 2%;
+  margin: 0% 1%;
 }
 
 .books-library h2 {
