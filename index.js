@@ -25,9 +25,8 @@ document.querySelector('.my-books').addEventListener('click', (e) => {
 
   Store.removeBook(e.target.previousElementSibling.textContent);
 });
- document.querySelectorAll('.switch-link').forEach((link) => {
+document.querySelectorAll('.switch-link').forEach((link) => {
   link.addEventListener('click', () => {
-    Switch.newPage(link.textContent)
-
+    Switch.newPage(link.textContent);
   });
- })
+});
